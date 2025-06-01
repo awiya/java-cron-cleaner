@@ -41,7 +41,7 @@ public class FileCleanupService {
 				if (lastModified.isBefore(seuil)) {
 					boolean deleted = fileSystem.deleteFile(f);
 					if (deleted) {
-						log.info("Supprimé : {} (dernière modif : {})", f.getAbsolutePath(), lastModified);
+						log.info("Fichier supprimé : {} (dernière modification : {})", f.getAbsolutePath(), lastModified);
 					}
 					else {
 						log.error("Impossible de supprimer : {}", f.getAbsolutePath());

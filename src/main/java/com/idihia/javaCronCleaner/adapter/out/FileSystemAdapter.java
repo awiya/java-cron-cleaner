@@ -10,6 +10,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
+import static java.time.temporal.ChronoUnit.SECONDS;
+
 @Component
 public class FileSystemAdapter implements FileSystemPort {
 
@@ -31,10 +33,10 @@ public class FileSystemAdapter implements FileSystemPort {
 	@Override
 	public Instant getLastModifiedTime(File file) {
 		try {
-			return Files.getLastModifiedTime(file.toPath()).toInstant();
+			return Files.getLastModifiedTime(file.toPath()).toInstant().truncatedTo(SECONDS);
 		}
 		catch (Exception e) {
-			throw new RuntimeException("Impossible de lire la date de dernière modif de " + file.getAbsolutePath(), e);
+			throw new RuntimeException("Impossible de lire la date de dernière modification de " + file.getAbsolutePath(), e);
 		}
 	}
 
