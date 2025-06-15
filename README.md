@@ -57,5 +57,5 @@ L’intérêt de ce projet est double :
 
 1. **Cloner le dépôt**
    ```bash
-   git clone https://github.com/awiya/java-cron-cleaner.git
+   git clone https://github.com/aidihia/java-cron-cleaner.git
    cd java-cron-cleaner
